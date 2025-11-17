@@ -1,4 +1,4 @@
-:root {
+:root {    
   --bg: #050509;
   --bg-elevated: #0e0e16;
   --bg-soft: #151521;
@@ -10,7 +10,7 @@
   --accent: #7b5cff;
 }
 
-/* Global reset & base */
+/* Global reset & base */  
 
 *,
 *::before,
@@ -150,17 +150,15 @@ a:hover {
     radial-gradient(circle at 50% 0%, #2b210c 0%, #050509 55%, #000000 100%);
 }
 
-/* BACK FIELD — SVG lattice grid */
+/* BACK FIELD — SVG lattice grid (tri/hex flavour) */
 .hero::before {
   content: "";
   position: absolute;
   inset: -15%;
   z-index: 0;
 
-  /* Deep base */
   background-color: #050509;
 
-  /* Inline SVG: triangular / hex-style lattice */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cg fill='none' stroke='%23b8860b' stroke-opacity='0.22' stroke-width='0.6'%3E%3Cpath d='M0 50h200M0 100h200M0 150h200'/%3E%3Cpath d='M-50 0l250 200M0 0l250 200M50 0l250 200'/%3E%3Cpath d='M-50 200l250-200M0 200l250-200M50 200l250-200'/%3E%3C/g%3E%3C/svg%3E");
 
   background-size: 260px 260px;
@@ -174,7 +172,7 @@ a:hover {
   animation: lattice-drift 42s linear infinite alternate;
 }
 
-/* FRONT FIELD — softer resonance haze */
+/* FRONT FIELD — softened resonance haze */
 .hero::after {
   content: "";
   position: absolute;
@@ -206,6 +204,10 @@ a:hover {
   grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
   align-items: center;
   transform: translateZ(80px);
+}
+
+.hero-copy {
+  max-width: 40rem;
 }
 
 .crest-logo {
@@ -273,14 +275,51 @@ a:hover {
   border-color: var(--gold-soft);
 }
 
-/* Hero visual panel */
+/* Hero visual panel (toroidal card) */
 
 .hero-panel {
+  position: relative;
   background: radial-gradient(circle at top, #1f1f32 0, #050509 62%);
-  border-radius: 1.2rem;
+  border-radius: 1.4rem;
   border: 1px solid var(--border-soft);
   padding: 1.7rem 1.7rem 1.4rem;
+  overflow: hidden;
 }
+
+/* Toroidal halo behind panel */
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at 50% 30%,
+      rgba(184, 134, 11, 0.18) 0%,
+      rgba(184, 134, 11, 0.06) 30%,
+      rgba(0, 0, 0, 0.0) 65%);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Golden-ratio spiral overlay (subtle) */
+.phi-spiral {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68%;
+  height: 68%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.phi-spiral path {
+  stroke: rgba(241, 212, 138, 0.6);
+  stroke-width: 0.8;
+  stroke-linecap: round;
+}
+
 
 .hero-orbit {
   position: relative;
@@ -292,6 +331,7 @@ a:hover {
   justify-content: center;
 }
 
+/* Concentric orbit rings */
 .orbit-ring {
   position: absolute;
   border-radius: 50%;
@@ -314,6 +354,48 @@ a:hover {
   border-color: #444469;
 }
 
+/* Particle tracks (share middle-ring radius) */
+.orbit-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68%;
+  height: 68%;
+  margin-top: -34%;
+  margin-left: -34%;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+}
+
+/* Two tracks, different speeds/directions (3–6–9 flavour) */
+.track-1 {
+  animation: electron-orbit 32s linear infinite;
+}
+
+.track-2 {
+  animation: electron-orbit 48s linear infinite reverse;
+}
+
+/* Orbiting particle */
+.orbit-dot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #f1d48a;
+  box-shadow: 0 0 12px rgba(241, 212, 138, 0.85);
+}
+
+/* Rotation around the track */
+@keyframes electron-orbit {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Δ core – centred */
 .orbit-core {
   position: absolute;
   top: 50%;
@@ -336,7 +418,6 @@ a:hover {
   color: #151515;
   box-shadow: 0 0 24px rgba(241, 212, 138, 0.45);
 }
-
 
 .hero-panel-caption {
   margin-top: 1.1rem;
@@ -415,26 +496,6 @@ section {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-<section class="contact-teaser">
-  <div class="container contact-inner">
-    <div>
-      <h2>Quietly building the future of Resonance Systems.</h2>
-      <p>
-        As the engines and frameworks mature, this site will expand. 
-        For now, it stands as a quiet marker that the work exists, 
-        is underway, and is being shaped with intention.
-      </p>
-    </div>
-
-    <div class="contact-block">
-      <p class="contact-label">Contact</p>
-      <p class="contact-email">contact@mwm.systems<br /><span>(placeholder)</span></p>
-      <p class="contact-note">
-        A dedicated inbox will be configured as the stack formalises.
-      </p>
-    </div>
-  </div>
-</section>
 
 .contact-block {
   padding: 1.1rem 1.3rem;
@@ -469,33 +530,26 @@ section {
   color: var(--text-muted);
 }
 
-/* Footer */
+/* Footer – polished */
 
 .site-footer {
-  border-top: 1px solid var(--border-soft);
-  padding: 1rem 0 1.4rem;
-  background: #050509;
+  padding: 2rem 0;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-inner {
+  color: #aaa;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .footer-sub {
-  opacity: 0.9;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
 }
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <span>© <span id="year"></span> MWM Resonant Systems Pty Ltd. All rights reserved.</span>
-    <span class="footer-sub">Quietly building the future of Resonance Systems.</span>
-  </div>
-</footer>apply 
 
 /* Responsive */
 
@@ -513,6 +567,10 @@ section {
   .hero-inner {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .hero-panel {
+    margin-top: 0.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -524,17 +582,165 @@ section {
     font-size: 1.8rem;
   }
 
-  .hero-panel {
-    margin-top: 0.5rem;
-  }
-
   .footer-inner {
-    flex-direction: column;
     align-items: flex-start;
   }
 }
 
 /* Animations */
+/* Toroidal lattice page */
+
+.torus-body {
+  background: radial-gradient(circle at 50% 0%, #2b210c 0%, #050509 55%, #000000 100%);
+  margin: 0;
+}
+
+.torus-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.torus-field {
+  position: relative;
+  width: min(480px, 80vw);
+  height: min(480px, 80vw);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 3D-ish toroidal scene */
+  background:
+    radial-gradient(circle at 50% 30%, rgba(241, 212, 138, 0.18) 0%, rgba(0, 0, 0, 0.0) 55%),
+    radial-gradient(circle at 50% 70%, rgba(10, 10, 20, 0.95) 0%, #020206 60%);
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.7),
+    0 0 120px rgba(241, 212, 138, 0.12);
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+}
+
+/* Toroidal shells (3 nested rings, rotating on slightly different axes) */
+.torus-shell {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  transform-origin: 50% 50%;
+}
+
+.shell-outer {
+  width: 96%;
+  height: 64%;
+  top: 18%;
+  left: 2%;
+  transform: rotateX(65deg);
+  animation: torus-roll 54s linear infinite;
+}
+
+.shell-middle {
+  width: 78%;
+  height: 52%;
+  top: 24%;
+  left: 11%;
+  transform: rotateX(68deg);
+  animation: torus-roll 72s linear infinite reverse;
+}
+
+.shell-inner {
+  width: 54%;
+  height: 36%;
+  top: 32%;
+  left: 23%;
+  transform: rotateX(72deg);
+  animation: torus-roll 96s linear infinite;
+}
+
+/* Δ core in torus page */
+.torus-core {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 0,
+    #f1d48a,
+    #a4761c 65%,
+    #050509 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #151515;
+  box-shadow:
+    0 0 20px rgba(241, 212, 138, 0.7),
+    0 0 60px rgba(241, 212, 138, 0.35);
+}
+
+/* 3 · 6 · 9 particles */
+.torus-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f1d48a;
+  box-shadow: 0 0 16px rgba(241, 212, 138, 0.9);
+}
+
+.p3 {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: torus-p3 36s linear infinite;
+}
+
+.p6 {
+  bottom: 10%;
+  left: 20%;
+  animation: torus-p6 54s linear infinite;
+}
+
+.p9 {
+  bottom: 12%;
+  right: 14%;
+  animation: torus-p9 72s linear infinite;
+}
+
+/* Caption */
+.torus-caption {
+  margin-top: 1.6rem;
+  max-width: 32rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Toroidal + particle motion (slow, meditative) */
+
+@keyframes torus-roll {
+  0%   { transform: rotateX(65deg) rotateZ(0deg); }
+  100% { transform: rotateX(65deg) rotateZ(360deg); }
+}
+
+@keyframes torus-p3 {
+  0%   { transform: translateX(-50%) rotate(0deg) translateY(0); }
+  100% { transform: translateX(-50%) rotate(360deg) translateY(0); }
+}
+
+@keyframes torus-p6 {
+  0%   { transform: rotate(0deg) translateX(0); }
+  100% { transform: rotate(-360deg) translateX(0); }
+}
+
+@keyframes torus-p9 {
+  0%   { transform: rotate(0deg) translateX(0); }
+  100% { transform: rotate(360deg) translateX(0); }
+}
 
 @keyframes lattice-drift {
   0%   { transform: translate3d(-16px, -12px, -260px) scale(1.25); }
@@ -547,3 +753,4 @@ section {
   50%  { opacity: 0.95; transform: translate3d(0, -6px, -90px) scale(1.08); }
   100% { opacity: 0.7;  transform: translate3d(0, 4px, -80px) scale(1.04); }
 }
+    

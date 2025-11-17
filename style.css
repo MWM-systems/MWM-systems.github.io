@@ -415,6 +415,26 @@ section {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+<section class="contact-teaser">
+  <div class="container contact-inner">
+    <div>
+      <h2>Quietly building the future of Resonance Systems.</h2>
+      <p>
+        As the engines and frameworks mature, this site will expand. 
+        For now, it stands as a quiet marker that the work exists, 
+        is underway, and is being shaped with intention.
+      </p>
+    </div>
+
+    <div class="contact-block">
+      <p class="contact-label">Contact</p>
+      <p class="contact-email">contact@mwm.systems<br /><span>(placeholder)</span></p>
+      <p class="contact-note">
+        A dedicated inbox will be configured as the stack formalises.
+      </p>
+    </div>
+  </div>
+</section>
 
 .contact-block {
   padding: 1.1rem 1.3rem;
@@ -475,7 +495,7 @@ section {
     <span>© <span id="year"></span> MWM Resonant Systems Pty Ltd. All rights reserved.</span>
     <span class="footer-sub">Quietly building the future of Resonance Systems.</span>
   </div>
-</footer>
+</footer>apply 
 
 /* Responsive */
 

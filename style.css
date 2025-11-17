@@ -9,6 +9,7 @@
   --text-muted: #a0a0b5;
   --accent: #7b5cff;
 }
+<link rel="stylesheet" href="style.css?v=4">
 
 /* Global reset & base */  
 
@@ -195,6 +196,13 @@ a:hover {
 }
 
 /* Foreground hero content */
+.hero::before {
+  animation: lattice-drift 22s linear infinite alternate;
+}
+
+.hero::after {
+  animation: haze-pulse 18s ease-in-out infinite alternate;
+}
 
 .hero-inner {
   position: relative;
@@ -310,7 +318,7 @@ a:hover {
   width: 68%;
   height: 68%;
   transform: translate(-50%, -50%) rotate(-18deg);
-  opacity: 0.28;
+  opacity: 0.38;
   pointer-events: none;
 }
 
@@ -329,6 +337,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+   /* existing styles... */
+  animation: hue-drift 160s linear infinite;
 }
 
 /* Concentric orbit rings */
@@ -614,6 +624,10 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+    /* keep resonance-breathe as-is */
+  animation:
+    resonance-breathe 32s ease-in-out infinite,
+    hue-drift 120s linear infinite;
 
   /* 3D-ish toroidal scene */
   background:
@@ -720,6 +734,71 @@ section {
   color: var(--text-muted);
 }
 
+/* TRIAD PARTICLES – tilted axis, oscillating amplitude */
+.triad {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f1d48a;
+  box-shadow: 0 0 10px rgba(241, 212, 138, 0.9);
+  transform-origin: 50% 200%;
+  
+.track-1 { animation: electron-orbit 12s linear infinite; }
+.track-2 { animation: electron-orbit 18s linear infinite reverse; }
+  
+/* Tiny flicker / jitter for particles */
+@keyframes particle-flicker {
+  0%   { opacity: 0.9; box-shadow: 0 0 10px rgba(241, 212, 138, 0.8); }
+  25%  { opacity: 0.7; box-shadow: 0 0 6px rgba(241, 212, 138, 0.5); }
+  50%  { opacity: 1.0; box-shadow: 0 0 14px rgba(241, 212, 138, 0.95); }
+  75%  { opacity: 0.8; box-shadow: 0 0 8px rgba(241, 212, 138, 0.65); }
+  100% { opacity: 0.9; box-shadow: 0 0 10px rgba(241, 212, 138, 0.8); }
+}
+.orbit-dot {
+  /* existing styles... */
+  animation: electron-orbit 12s linear infinite,
+             particle-flicker 4.5s ease-in-out infinite;
+}
+
+.torus-particle,
+.triad {
+  /* existing styles... */
+  animation:
+    /* existing spin animations per class… */
+    particle-flicker 5.5s ease-in-out infinite;
+}
+
+/* Different start angles */
+.triad-1 { animation: triad-spin 9s ease-in-out infinite; }
+.triad-2 { animation: triad-spin 9s ease-in-out infinite 0.3s; }
+.triad-3 { animation: triad-spin 9s ease-in-out infinite 0.6s; }
+
+  /* Global resonance breath – subtle scale wobble */
+@keyframes resonance-breathe {
+  0%   { transform: scale(1.00); }
+  50%  { transform: scale(1.03); }
+  100% { transform: scale(1.00); }
+}
+.hero-panel {
+  /* existing styles... */
+  animation: resonance-breathe 22s ease-in-out infinite;
+}
+
+.torus-field {
+  /* existing styles... */
+  animation: resonance-breathe 32s ease-in-out infinite;
+}
+
+/* Oscillating + rotational motion */
+@keyframes triad-spin {
+  0%   { transform: rotate(0deg)   translateY(-40px); }
+  25%  { transform: rotate(120deg) translateY(-50px); }
+  50%  { transform: rotate(240deg) translateY(-65px); }
+  75%  { transform: rotate(320deg) translateY(-50px); }
+  100% { transform: rotate(360deg) translateY(-40px); }
+}
+
 /* Toroidal + particle motion (slow, meditative) */
 
 @keyframes torus-roll {
@@ -727,9 +806,40 @@ section {
   100% { transform: rotateX(65deg) rotateZ(360deg); }
 }
 
+.shell-outer {
+  animation: torus-roll 18s linear infinite;
+}
+
+.shell-middle {
+  animation: torus-roll 26s linear infinite reverse;
+}
+
+.shell-inner {
+  animation: torus-roll 34s linear infinite;
+}
+
 @keyframes torus-p3 {
-  0%   { transform: translateX(-50%) rotate(0deg) translateY(0); }
-  100% { transform: translateX(-50%) rotate(360deg) translateY(0); }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes torus-p6 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes torus-p9 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.p3 { animation: torus-p3 8s linear infinite, particle-flicker 5.5s ease-in-out infinite; }
+.p6 { animation: torus-p6 12s linear infinite, particle-flicker 6.2s ease-in-out infinite; }
+.p9 { animation: torus-p9 18s linear infinite, particle-flicker 7.1s ease-in-out infinite; }
+
+.triad-1 { animation: triad-spin 9s ease-in-out infinite, particle-flicker 4.8s ease-in-out infinite; }
+.triad-2 { animation: triad-spin 9s ease-in-out infinite 0.3s, particle-flicker 5.3s ease-in-out infinite; }
+.triad-3 { animation: triad-spin 9s ease-in-out infinite 0.6s, particle-flicker 5.9s ease-in-out infinite; }
+
 }
 
 @keyframes torus-p6 {
@@ -754,3 +864,39 @@ section {
   100% { opacity: 0.7;  transform: translate3d(0, 4px, -80px) scale(1.04); }
 }
     
+/* Δ core resonance – tiny scale + glow modulation */
+@keyframes core-resonance {
+  0% {
+    transform: translate(-50%, -50%) scale(1.00);
+    box-shadow:
+      0 0 18px rgba(241, 212, 138, 0.55),
+      0 0 40px rgba(241, 212, 138, 0.18);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.06);
+    box-shadow:
+      0 0 26px rgba(241, 212, 138, 0.9),
+      0 0 70px rgba(241, 212, 138, 0.35);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.00);
+    box-shadow:
+      0 0 18px rgba(241, 212, 138, 0.55),
+      0 0 40px rgba(241, 212, 138, 0.18);
+  }
+}
+.orbit-core {
+  /* existing styles... */
+  animation: core-resonance 18s ease-in-out infinite;
+}
+
+.torus-core {
+  /* existing styles... */
+  animation: core-resonance 24s ease-in-out infinite;
+}
+
+@keyframes hue-drift {
+  0%   { filter: hue-rotate(0deg); }
+  50%  { filter: hue-rotate(10deg); }
+  100% { filter: hue-rotate(0deg); }
+}

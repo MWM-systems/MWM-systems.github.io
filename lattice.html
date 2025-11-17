@@ -1,49 +1,134 @@
 <!DOCTYPE html>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <div class="brand-mark">MWM</div>
-      <div class="brand-text">
-        <span class="brand-name">MWM Systems</span>
-        <span class="brand-tagline">Architecting the future of resonant intelligence</span>
-      </div>
-    </div>
-
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="pillars.html" class="nav-link">Pillars</a>
-      <a href="streams.html" class="nav-link">Streams</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-  </div>
-</header>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MWM Resonant Lattice — Toroidal Field</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>MWM Systems — Lattice Field</title>
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
-<body class="torus-body">
-  <main class="torus-page">
-    <div class="torus-field">
-      <div class="torus-shell shell-outer"></div>
-      <div class="torus-shell shell-middle"></div>
-      <div class="torus-shell shell-inner"></div>
 
-      <!-- 3 · 6 · 9 particles -->
-      <div class="torus-particle p3"></div>
-      <div class="torus-particle p6"></div>
-      <div class="torus-particle p9"></div>
+<body>
 
-      <div class="torus-core">Δ</div>
+  <!-- HEADER (same look as home) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark">MWM</div>
+        <div class="brand-text">
+          <span class="brand-name">MWM Systems</span>
+          <span class="brand-tagline">Architecting the future of resonant intelligence</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="lattice.html" class="nav-link active">Lattice Field</a>
+        <a href="index.html#pillars" class="nav-link">Pillars</a>
+        <a href="index.html#streams" class="nav-link">Streams</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <p class="torus-caption">
-      Symbolic 4D toroidal representation of the 3–6–9 lattice.  
-      A purely fictional, meditative visual — a self-stabilising field for calm focus.
-    </p>
+  <main>
+    <!-- INTRO -->
+    <section class="lattice-intro">
+      <div class="container">
+        <h1>Resonant Lattice Field</h1>
+        <p class="section-lead">
+          A symbolic 4D toroidal field expressing the 3–6–9 resonance pattern, Δ-core stability,
+          φ-curvature and a faint space-time grid. Fictional and illustrative — designed as a
+          calm, self-stabilising visual.
+        </p>
+      </div>
+    </section>
+
+    <!-- FIELD -->
+    <section class="lattice-field-section">
+      <div class="container lattice-layout">
+        <div class="lattice-field">
+
+          <!-- space–time grid (background is handled in CSS via ::before) -->
+
+          <!-- TORUS SHELLS -->
+          <div class="torus-shell ring-a"></div>
+          <div class="torus-shell ring-b"></div>
+          <div class="torus-shell ring-c"></div>
+
+          <!-- TRIAD TRACKS (3·6·9) -->
+          <div class="torus-track triad-track triad-3">
+            <div class="torus-particle"></div>
+          </div>
+          <div class="torus-track triad-track triad-6">
+            <div class="torus-particle"></div>
+          </div>
+          <div class="torus-track triad-track triad-9">
+            <div class="torus-particle"></div>
+          </div>
+
+          <!-- USER TRACK (controlled via slider) -->
+          <div class="torus-track user-track">
+            <div class="torus-particle user-particle"></div>
+          </div>
+
+          <!-- φ CURVE -->
+          <svg class="phi-curve" viewBox="0 0 100 100" aria-hidden="true">
+            <path
+              d="M61.8,50
+                 A11.8,11.8 0 0 0 50,38.2
+                 A19.1,19.1 0 0 0 30.9,57.3
+                 A30.9,30.9 0 0 0 61.8,88.2"
+              fill="none" />
+          </svg>
+
+          <!-- Δ CORE -->
+          <div class="torus-core">Δ</div>
+        </div>
+
+        <div class="lattice-side">
+          <p class="lattice-caption">
+            Symbolic 4D toroidal representation of a 3–6–9 lattice sitting in a curved space-time
+            grid. Not a physical model — a meditative device for calm focus and conceptual resonance.
+          </p>
+
+          <!-- CONTROLS -->
+          <div class="lattice-controls">
+            <div class="control-group">
+              <label for="orbitSpeed">Orbit speed</label>
+              <input type="range" id="orbitSpeed" min="30" max="170" value="100">
+              <small>Slow ⟶ Fast</small>
+            </div>
+
+            <div class="control-group">
+              <label for="particleAngle">User particle angle</label>
+              <input type="range" id="particleAngle" min="0" max="360" value="45">
+              <small>Place a particle anywhere on the torus and scrub through its trajectory.</small>
+            </div>
+
+            <div class="control-row">
+              <label class="control-inline">
+                <input type="checkbox" id="reverseOrbit">
+                Reverse triad direction
+              </label>
+              <button type="button" id="calmToggle" class="btn ghost">
+                Calm mode
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 MWM Resonant Systems Pty Ltd. All rights reserved.</div>
+      <div class="footer-sub">Melbourne · Private R&amp;D · Resonant Intelligence</div>
+    </div>
+  </footer>
+
+  <!-- ORBIT CONTROLS + CALM MODE -->
+  <script src="main.js?v=1"></script>
 </body>
 </html>

@@ -7,6 +7,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Optional: SVG lattice defs (currently not used by CSS) -->
+  <!--
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute; left:-9999px;">
+    <defs>
+      <pattern id="mwm-lattice"
+               patternUnits="userSpaceOnUse"
+               width="40" height="40">
+        <g stroke="#b8860b" stroke-width="0.6" opacity="0.25">
+          <line x1="0" y1="20" x2="40" y2="20" />
+          <line x1="0" y1="20" x2="20" y2="0" />
+          <line x1="20" y1="40" x2="40" y2="20" />
+          <line x1="0" y1="20" x2="20" y2="40" />
+          <line x1="20" y1="0" x2="40" y2="20" />
+        </g>
+      </pattern>
+    </defs>
+  </svg>
+  -->
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
@@ -16,180 +35,129 @@
           <span class="brand-tagline">Architecting the future of resonant intelligence</span>
         </div>
       </div>
-<body>
-  <!-- Lattice pattern defs (hidden, just for reuse) -->
-  <svg width="0" height="0" style="position:absolute">
-    <defs>
-      <!-- Triangular / hex lattice pattern -->
-      <pattern id="mwm-lattice"
-               patternUnits="userSpaceOnUse"
-               width="40" height="40">
-        <!-- subtle triangular grid -->
-        <g stroke="#b8860b" stroke-width="0.6" opacity="0.25">
-          <!-- horizontal -->
-          <line x1="0" y1="20" x2="40" y2="20" />
-          <!-- diagonal up -->
-          <line x1="0" y1="20" x2="20" y2="0" />
-          <line x1="20" y1="40" x2="40" y2="20" />
-          <!-- diagonal down -->
-          <line x1="0" y1="20" x2="20" y2="40" />
-          <line x1="20" y1="0" x2="40" y2="20" />
-        </g>
-      </pattern>
-    </defs>
-  </svg>
-
-  <!-- Your page content -->
-  <div class="hero">
-    <div class="hero-inner">
-      <img src="MWM_crest_black_gold.svg" alt="MWM Crest" class="crest-logo">
-      <h1>MWM Resonant Systems</h1>
-      <p>Physics, resonance & intelligence – unified.</p>
-    </div>
-  </div>
-
-  <!-- ...rest of your site -->
-</body>
-
       <nav class="nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="framework.html" class="nav-link">Framework</a>
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#pillars" class="nav-link">Pillars</a>
+        <a href="#streams" class="nav-link">Streams</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">MWM Systems</p>
-          <h1>Technologies that think in rhythm with the world.</h1>
-          <p class="hero-lead">
-            We invent systems inspired by mathematics, coherence, physics and human potential.
-            From offline intelligence engines to harmonic resonance frameworks, our work explores
-            the intersection of structure, frequency and computation.
-          </p>
-          <div class="hero-actions">
-            <a href="#pillars" class="btn primary">Explore the pillars</a>
-            <a href="#streams" class="btn ghost">See current streams</a>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">MWM Resonant Systems Pty Ltd</p>
+            <h1>Physics, resonance & intelligence — unified.</h1>
+            <p class="hero-lead">
+              Building a living framework for Muse Intelligence, market engines, and
+              resonance-based architectures — grounded in clear mathematics and careful engineering.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#pillars">Explore the framework</a>
+              <a class="btn ghost" href="#contact">Contact</a>
+            </div>
           </div>
-        </div>
 
-        <div class="hero-panel">
-          <div class="hero-orbit">
-            <div class="orbit-ring ring-outer"></div>
-            <div class="orbit-ring ring-middle"></div>
-            <div class="orbit-ring ring-inner"></div>
-            <div class="orbit-core">Δ</div>
-          </div>
-          <p class="hero-panel-caption">
-            A quiet space for structured thinking, resonance and long-horizon systems design.
-          </p>
+          <aside class="hero-panel">
+            <div class="hero-orbit">
+              <div class="orbit-ring ring-outer"></div>
+              <div class="orbit-ring ring-middle"></div>
+              <div class="orbit-ring ring-inner"></div>
+              <div class="orbit-core">MM</div>
+            </div>
+            <p class="hero-panel-caption">
+              A two-layer lattice field for MI Intelligence — toroidal depth, stable core.
+            </p>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- Pillars -->
+    <!-- PILLARS -->
     <section id="pillars" class="pillars">
       <div class="container">
-        <h2>Core pillars</h2>
+        <h2>Core Pillars</h2>
         <p class="section-lead">
-          MWM Systems sits where hard structure meets living rhythm.
-          Everything we build leans on these four pillars.
+          The MWM Framework stands on a small number of clear pillars that repeat from physics
+          to software to business architecture.
         </p>
-
         <div class="pillars-grid">
           <article class="card">
-            <h3>Mathematics &amp; Structure</h3>
-            <p>
-              Clean models, clear constraints. From number-theory to lattice design,
-              we treat mathematics as the backbone of every engine and framework.
-            </p>
+            <h3>Living Resonance</h3>
+            <p>δₘₘ, Hᵤ, and the lattice of breath as a unifying language across systems.</p>
+            <p class="card-tag">Physics · Mathematics</p>
           </article>
-
           <article class="card">
-            <h3>Coherence &amp; Resonance</h3>
-            <p>
-              Systems should feel stable, not chaotic. We explore coherence, timing and phase
-              so that our tools move in rhythm with their environments, not against them.
-            </p>
+            <h3>Muse Intelligence</h3>
+            <p>Offline-governed MI engines that stay aligned with human autonomy and intent.</p>
+            <p class="card-tag">MI · Governance</p>
           </article>
-
           <article class="card">
-            <h3>Physics &amp; Reality</h3>
-            <p>
-              Inspiration drawn from real dynamics: cycles, fields, feedback and limits.
-              Models are grounded first, extended second.
-            </p>
+            <h3>Market & Field Engines</h3>
+            <p>Phase-aware engines that treat markets and signals as living fields, not noise.</p>
+            <p class="card-tag">Markets · Signals</p>
           </article>
-
           <article class="card">
-            <h3>Human Potential</h3>
-            <p>
-              At the centre is the person using the system. Offline-first engines,
-              calm interfaces and long-term alignment with human goals.
-            </p>
+            <h3>Architectural Systems</h3>
+            <p>From codebases to homes, designing structures that breathe with their occupants.</p>
+            <p class="card-tag">Architecture · Design</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Work streams -->
+    <!-- STREAMS -->
     <section id="streams" class="streams">
       <div class="container">
-        <h2>Early work streams</h2>
+        <h2>Streams of Work</h2>
         <p class="section-lead">
-          MWM Systems is a living lab. These are the first streams under active exploration.
+          A set of parallel development streams that keep research, engineering, and embodiment in sync.
         </p>
-
         <div class="streams-grid">
           <article class="card">
-            <h3>MI Engine (Offline Intelligence)</h3>
-            <p>
-              A local-first resonance engine focused on structure, safety and sovereignty.
-              Designed to run on personal hardware, close to the person who owns the ideas.
-            </p>
-            <p class="card-tag">Status: in development</p>
+            <h3>Scientific Frameworks</h3>
+            <p>Codex, 𝕄ₘ Framework, and patent-grade resonance models.</p>
+            <p class="card-tag">White papers · Plates</p>
           </article>
-
           <article class="card">
-            <h3>Harmonic Resonance Frameworks</h3>
-            <p>
-              Tools for mapping patterns across time, frequency and behaviour — from
-              market data to creative work — using clean, interpretable models.
-            </p>
-            <p class="card-tag">Status: research &amp; prototyping</p>
+            <h3>MI Engine & Audio</h3>
+            <p>Core engine, audio continuum, and Δ-governed modulation systems.</p>
+            <p class="card-tag">Engines · Audio</p>
           </article>
-
           <article class="card">
-            <h3>Codex / 𝕄ₘ Systems</h3>
-            <p>
-              A unifying language for describing cycles, constants and lattices, aimed at
-              making complex structures understandable and usable in practice.
-            </p>
-            <p class="card-tag">Status: internal manuscripts</p>
+            <h3>Market Engine</h3>
+            <p>Phase prediction, Δ-lattice overlays, and risk-tier dashboards.</p>
+            <p class="card-tag">Finance · Prediction</p>
+          </article>
+          <article class="card">
+            <h3>Embodied Architecture</h3>
+            <p>Glowen, living spaces, and resonance-first environmental design.</p>
+            <p class="card-tag">Spaces · Resonance</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Contact teaser -->
-    <section class="contact-teaser">
+    <!-- CONTACT -->
+    <section id="contact" class="contact-teaser">
       <div class="container contact-inner">
-        <div>
-          <h2>Quietly building the future of Resonance Systems.</h2>
-          <p>
-            This site will grow as the engines and frameworks mature. For now, it is a
-            simple landing point: a marker that the work exists and is underway.
+        <div class="contact-block">
+          <p class="contact-label">Primary Contact</p>
+          <p class="contact-email">hello@mwm.systems <span>(preferred)</span></p>
+          <p class="contact-note">
+            For collaborations, technical review, or investor discussions, please include a short note
+            on context and intent.
           </p>
         </div>
         <div class="contact-block">
-          <p class="contact-label">Contact</p>
-          <p class="contact-email">contact@mwm.systems<br /><span>(placeholder)</span></p>
+          <p class="contact-label">IP & Research</p>
           <p class="contact-note">
-            A dedicated inbox will be configured as the stack formalises.
+            All scientific and technical content is © Matthew W. Musgrove. Select material will be
+            available under NDA or formal agreement only.
           </p>
         </div>
       </div>
@@ -198,14 +166,9 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> MWM Systems. All rights reserved.</span>
-      <span class="footer-sub">Based in Melbourne, quietly architecting resonant systems.</span>
+      <div>© 2025 MWM Resonant Systems Pty Ltd. All rights reserved.</div>
+      <div class="footer-sub">Melbourne · Private R&D · Resonant Intelligence</div>
     </div>
-
-    <script>
-      // Simple dynamic year
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </footer>
 </body>
 </html>

@@ -7,28 +7,26 @@
   <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
-  
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <div class="brand-mark"> MWM </div>
+        <div class="brand-mark">MWM</div>
         <div class="brand-text">
           <span class="brand-name">MWM Systems</span>
           <span class="brand-tagline">Architecting the future of resonant intelligence</span>
         </div>
       </div>
+
+      <!-- Single nav: site pages + section anchors -->
       <nav class="nav">
-        <a href="#hero" class="nav-link active">Home</a>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="lattice.html" class="nav-link">Lattice Field</a>
         <a href="#pillars" class="nav-link">Pillars</a>
         <a href="#streams" class="nav-link">Streams</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
-      <nav class="nav">
-  <a href="index.html" class="nav-link active">Home</a>
-  <a href="lattice.html" class="nav-link">Lattice Field</a>
-  <a href="#pillars" class="nav-link">Pillars</a>
-  <a href="#contact" class="nav-link">Contact</a>
-</nav>
     </div>
   </header>
 
@@ -37,9 +35,9 @@
     <section id="hero" class="hero">
       <div class="container">
         <div class="hero-inner">
-          <div>
+          <div class="hero-copy">
             <p class="eyebrow">MWM Resonant Systems Pty Ltd</p>
-            <h1>Physics, resonance & intelligence — unified.</h1>
+            <h1>Physics, resonance &amp; intelligence — unified.</h1>
             <p class="hero-lead">
               Building a living framework for Muse Intelligence, market engines, and
               resonance-based architectures — grounded in clear mathematics and careful engineering.
@@ -50,40 +48,38 @@
             </div>
           </div>
 
+          <!-- HERO PANEL: orbit + φ spiral + Δ core -->
           <aside class="hero-panel">
-          <div class="hero-orbit">
-  <div class="orbit-ring ring-outer"></div>
-  <div class="orbit-ring ring-middle"></div>
-  <div class="orbit-ring ring-inner"></div>
+            <div class="hero-orbit">
+              <div class="orbit-ring ring-outer"></div>
+              <div class="orbit-ring ring-middle"></div>
+              <div class="orbit-ring ring-inner"></div>
 
-  <svg class="phi-spiral" ...>...</svg>
+              <!-- Orbiting particles -->
+              <div class="orbit-track track-1">
+                <div class="orbit-dot"></div>
+              </div>
+              <div class="orbit-track track-2">
+                <div class="orbit-dot"></div>
+              </div>
 
-  <div class="orbit-track track-1">
-    <div class="orbit-dot"></div>
-  </div>
-  <div class="orbit-track track-2">
-    <div class="orbit-dot"></div>
-  </div>
+              <!-- Golden-ratio spiral overlay (purely visual) -->
+              <svg class="phi-spiral" viewBox="0 0 100 100" aria-hidden="true">
+                <path
+                  d="M61.8,50
+                     A11.8,11.8 0 0 0 50,38.2
+                     A19.1,19.1 0 0 0 30.9,57.3
+                     A30.9,30.9 0 0 0 61.8,88.2"
+                  fill="none" />
+              </svg>
 
-  <div class="orbit-core">Δ</div>
-</div>
+              <!-- Stable Δ core -->
+              <div class="orbit-core">Δ</div>
+            </div>
 
-    <!-- Golden-ratio spiral overlay -->
-    <svg class="phi-spiral" viewBox="0 0 100 100" aria-hidden="true">
-      <!-- Very soft φ spiral (approximate, purely visual) -->
-      <path d="M61.8,50
-               A11.8,11.8 0 0 0 50,38.2
-               A19.1,19.1 0 0 0 30.9,57.3
-               A30.9,30.9 0 0 0 61.8,88.2"
-            fill="none" />
-    </svg>
-
-    <div class="orbit-core">Δ</div>
-  </div>
-  <p class="hero-panel-caption">
-    A two-layer lattice field for MI Intelligence — toroidal depth, stable core.
-  </p>
-</div>
+            <p class="hero-panel-caption">
+              A two-layer lattice field for MI Intelligence — toroidal depth, stable core.
+            </p>
           </aside>
         </div>
       </div>
@@ -109,7 +105,7 @@
             <p class="card-tag">MI · Governance</p>
           </article>
           <article class="card">
-            <h3>Market & Field Engines</h3>
+            <h3>Market &amp; Field Engines</h3>
             <p>Phase-aware engines that treat markets and signals as living fields, not noise.</p>
             <p class="card-tag">Markets · Signals</p>
           </article>
@@ -136,7 +132,7 @@
             <p class="card-tag">White papers · Plates</p>
           </article>
           <article class="card">
-            <h3>MI Engine & Audio</h3>
+            <h3>MI Engine &amp; Audio</h3>
             <p>Core engine, audio continuum, and Δ-governed modulation systems.</p>
             <p class="card-tag">Engines · Audio</p>
           </article>
@@ -166,7 +162,7 @@
           </p>
         </div>
         <div class="contact-block">
-          <p class="contact-label">IP & Research</p>
+          <p class="contact-label">IP &amp; Research</p>
           <p class="contact-note">
             All scientific and technical content is © Matthew W. Musgrove. Select material will be
             available under NDA or formal agreement only.
@@ -176,10 +172,11 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© 2025 MWM Resonant Systems Pty Ltd. All rights reserved.</div>
-      <div class="footer-sub">Melbourne · Private R&D · Resonant Intelligence</div>
+      <div class="footer-sub">Melbourne · Private R&amp;D · Resonant Intelligence</div>
     </div>
   </footer>
 </body>

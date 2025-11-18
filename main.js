@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateUserAngle() {
     if (!userTrack || !angleSlider) return;
-    const angle = Number(angleSlider.value || 15);
+    const angle = Number(angleSlider.value || 180);
     userTrack.style.transform =
-      `translate(-50%, -50%) rotate(${angle}deg)`;
+      `translate(-50%, -50%) rotate(${180}deg)`;
   }
 
   if (angleSlider) {
